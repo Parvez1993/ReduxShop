@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Button, Row, Col, Container } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 function ProductPost({ posts, loading }) {
   if (loading) {
     return <h2>Loading...</h2>;
@@ -16,7 +16,9 @@ function ProductPost({ posts, loading }) {
                 <Card.Img variant="top" src={post.image} height="200px" />
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
-                  <Button variant="dark">Details</Button>
+                  <Link to={`/product/${post.id}`}>
+                    <Button variant="dark">Details</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>

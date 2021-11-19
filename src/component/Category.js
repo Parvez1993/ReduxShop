@@ -8,6 +8,15 @@ function Category() {
     <div className="text-center">
       <Button
         variant="dark"
+        name="all"
+        className="m-2"
+        size="lg"
+        onClick={handleCategory}
+      >
+        All
+      </Button>
+      <Button
+        variant="dark"
         name="electronics"
         className="m-2"
         size="lg"

@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Row, Button } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { beginProducts, setProducts } from "../redux/action/productActions";
 import Category from "./Category";
-import Pagination from "react-bootstrap/Pagination";
-import PageItem from "react-bootstrap/PageItem";
 import ProductPagination from "./ProductPagination";
 import ProductPost from "./ProductPost";
 
@@ -53,7 +51,7 @@ function Products() {
       <Category />
 
       {loading ? (
-        "loading"
+        <Spinner animation="grow" className="mx-auto" />
       ) : (
         <>
           <ProductPost posts={currentPosts} loading={loading} />

@@ -3,6 +3,7 @@ const initialState = {
   products: [],
   tempProducts: [],
   loading: false,
+  selectedProduct: [],
 };
 
 export const productReducer = (state = initialState, action) => {
@@ -20,6 +21,11 @@ export const productReducer = (state = initialState, action) => {
         loading: false,
       };
 
+    case ActionTypes.SELECTED_PRODUCT:
+      return { ...state, selectedProduct: action.payload };
+
+    case ActionTypes.REMOVE_SELECTED_PRODUCT:
+      return { ...state, selectedProduct: [] };
     default:
       return state;
   }
